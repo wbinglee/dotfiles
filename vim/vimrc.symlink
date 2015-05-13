@@ -218,8 +218,8 @@ else
     "colorscheme desert
     "colorscheme dracula
     "colorscheme solarized
-    " colorscheme railscasts
-    colorscheme wells-colors
+    colorscheme railscasts
+    " colorscheme wells-colors
 endif
 
 " Set extra options when running in GUI mode
