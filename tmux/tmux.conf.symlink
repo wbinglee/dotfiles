@@ -1,0 +1,129 @@
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# tmux display things in 256 colors
+set -g default-terminal "screen-256color"
+set -g status-utf8 on
+
+set -g history-limit 20000
+
+# automatically renumber tmux windows
+set -g renumber-windows on
+
+# Disable auto window rename
+set-option -g allow-rename off
+
+# unbind default prefix and set it to Ctrl+a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+bind-key C-a last-window
+
+# for nested tmux sessions
+bind-key a send-prefix
+
+
+# make delay shorter
+set -sg escape-time 0
+
+######################
+#### Key Bindings ####
+######################
+# split window and fix path for tmux 1.9
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+
+# pane movement shortcuts
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# set vi mode for copy mode
+setw -g mode-keys vi
+
+# more settings to make copy-mode more vim-like
+#unbind C-b
+#set -g prefix C-Space
+#bind Space send-prefix
+
+unbind [
+bind Escape copy-mode
+
+#### COLOUR
+
+tm_icon="♟"
+tm_color_active=colour213
+tm_color_inactive=colour241
+tm_color_feature=colour4
+tm_color_music=colour203
+
+# separators
+tm_separator_left_bold="◀"
+tm_separator_left_thin="❮"
+tm_separator_right_bold="▶"
+tm_separator_right_thin="❯"
+
+set -g status-left-length 32
+set -g status-right-length 150
+set -g status-interval 5
+
+
+# default statusbar colors
+# set-option -g status-bg colour0
+set-option -g status-fg $tm_color_active
+set-option -g status-bg default
+set-option -g status-attr default
+
+# default window title colors
+set-window-option -g window-status-fg $tm_color_inactive
+set-window-option -g window-status-bg default
+set -g window-status-format "#I #W"
+
+# active window title colors
+set-window-option -g window-status-current-fg $tm_color_active
+set-window-option -g window-status-current-bg default
+set-window-option -g  window-status-current-format "#[bold]#I #W"
+
+# pane border
+set-option -g pane-border-fg $tm_color_inactive
+set-option -g pane-active-border-fg $tm_color_active
+
+# message text
+set-option -g message-bg default
+set-option -g message-fg $tm_color_active
+
+# pane number display
+set-option -g display-panes-active-colour $tm_color_active
+set-option -g display-panes-colour $tm_color_inactive
+
+# clock
+set-window-option -g clock-mode-colour $tm_color_active
+
+#tm_spotify="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
+#tm_itunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
+#tm_rdio="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/rdio.scpt)"
+#tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
+
+tm_date="#[fg=$tm_color_inactive] %R %d %b"
+tm_host="#[fg=$tm_color_feature,bold]#h"
+tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
+
+set -g status-left $tm_session_name
+set -g status-right $tm_date' '$tm_host
+
+# color status bar
+set -g status-bg colour235
+set -g status-fg white
+
+# highlight current window
+set-window-option -g window-status-current-fg black
+set-window-option -g window-status-current-bg green
+
+
+# set color of active pane
+set -g pane-border-fg colour235
+set -g pane-border-bg black
+set -g pane-active-border-fg green
+set -g pane-active-border-bg black

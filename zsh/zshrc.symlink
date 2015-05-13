@@ -1,0 +1,62 @@
+ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="bruce"
+
+CASE_SENSITIVE="true"
+
+HIST_STAMPS="yyyy-mm-dd"
+
+plugins=(git git-flow virtualenv gradle history mvn node sublime vagrant my-alias aws nvm tmux brew rails docker bundler vi-mode zsh-syntax-highlighting zaw)
+
+source $ZSH/oh-my-zsh.sh
+
+#Let /usr/local/bin before /usr/bin
+export PATH="/usr/local/bin:$PATH"
+
+#rbenv config
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+export EDITOR='vim'
+
+#ZSH history
+HISTSIZE=12000
+SAVEHIST=10000
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_SPACE
+setopt EXTENDED_HISTORY
+
+
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
+
+alias rake="noglob rake"
+
+#nvm config
+[ -s "~/.nvm/nvm.sh" ] && . "~/.nvm/nvm.sh" # This loads nvm
+
+#Docker
+`docker-machine env dev`
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+PATH=$PATH:/usr/local/sbin
+
+. `brew --prefix`/etc/profile.d/z.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/Bruce/.gvm/bin/gvm-init.sh" ]] && source "/Users/Bruce/.gvm/bin/gvm-init.sh"
+
+#GVM
+source ~/.gvm/bin/gvm-init.sh
+
+# Load private keys
+ssh-add > /dev/null 2>&1
+ssh-add ~/.ssh/findly-aws/* > /dev/null  2>&1
+
+# Add ctrl-r for backward history search , pattern based
+# bindkey '^R' history-incremental-pattern-search-backward
+
+bindkey '^R' zaw-history
+
+# Faster zsh vi mode deploy
+export KEYTIMEOUT=1
