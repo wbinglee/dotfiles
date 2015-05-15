@@ -219,7 +219,7 @@ else
     "colorscheme dracula
     "colorscheme solarized
     colorscheme railscasts
-    " colorscheme wells-colors
+    colorscheme bruce-colors
 endif
 
 " Set extra options when running in GUI mode

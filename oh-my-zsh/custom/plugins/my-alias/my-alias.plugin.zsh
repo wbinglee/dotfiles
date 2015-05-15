@@ -6,5 +6,5 @@ alias t='geekdict t'
 #For clear
 alias cls='clear'
 
-alias cat='pygmentize -g'
+alias dog='pygmentize -g'
 

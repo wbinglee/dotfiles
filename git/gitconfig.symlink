@@ -12,6 +12,7 @@
     ps = push
     pl = pull
     master = checkout master
+    feature = !f() { git checkout -b feature/$1;};f
 [core]
 	editor = vim
 [filter "media"]

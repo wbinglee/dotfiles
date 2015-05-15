@@ -44,10 +44,10 @@ PATH=$PATH:/usr/local/sbin
 . `brew --prefix`/etc/profile.d/z.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/Bruce/.gvm/bin/gvm-init.sh" ]] && source "/Users/Bruce/.gvm/bin/gvm-init.sh"
+# [[ -s "/Users/Bruce/.gvm/bin/gvm-init.sh" ]] && source "/Users/Bruce/.gvm/bin/gvm-init.sh"
 
 #GVM
-source ~/.gvm/bin/gvm-init.sh
+# source ~/.gvm/bin/gvm-init.sh
 
 # Load private keys
 ssh-add > /dev/null 2>&1
