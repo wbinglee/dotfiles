@@ -5,14 +5,13 @@
 	default = current
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	pr = pull --rebase
+	pd = pull --rebase
 	s = status
 	d = diff
     ds = diff --staged
     ps = push
     pl = pull
     master = checkout master
-    feature = !f() { git checkout -b feature/$1;};f
 [core]
 	editor = vim
 [filter "media"]
