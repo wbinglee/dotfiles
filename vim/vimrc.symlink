@@ -217,12 +217,12 @@ set background=dark
 "let g:solarized_contrast="high"
 
 if has('gui_running')
-    colorscheme solarized
+    colorscheme luna
 else
     "colorscheme desert
     "colorscheme dracula
     "colorscheme solarized
-    colorscheme railscasts
+    " colorscheme railscasts
     colorscheme bruce-colors
 endif
 
