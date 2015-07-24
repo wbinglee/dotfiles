@@ -48,8 +48,8 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark
+map <leader>n :NERDTreeToggle<cr>
+" map <leader>nb :NERDTreeFromBookmark
 map <leader>f :NERDTreeFind<cr>
 let g:NERDTreeWinSize=35
 
@@ -111,6 +111,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+
+autocmd BufWritePost *.js :call SyntasticCheck()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Number Toggle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,8 +144,24 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" Switch with last buffer
 nnoremap <leader><leader> <c-^>
 
+" F2 hotkey binding for location list
+nnoremap <F2> :lnext<CR>
+nnoremap <S-F2> :lprevious<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+
+" vim-session
+let g:session_autosave = 'no'
+let g:session_load = 'no'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,6 +253,9 @@ if has("gui_running")
     set guitablabel=%M\ %t
     set guioptions-=L
     set guioptions-=r
+
+    let g:nerdtree_tabs_open_on_gui_startup=0
+    let g:nerdtree_tabs_open_on_new_tab=0
 endif
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -324,7 +346,7 @@ endif
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
+  set switchbuf=useopen,usetab
   set stal=2
 catch
 endtry
