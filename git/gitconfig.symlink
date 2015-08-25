@@ -12,6 +12,7 @@
     ps = push
     pl = pull
     master = checkout master
+    recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
 [core]
 	editor = vim
 [filter "media"]
