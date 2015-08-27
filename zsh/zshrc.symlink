@@ -6,7 +6,7 @@ CASE_SENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git git-flow virtualenv gradle history mvn node sublime vagrant my-alias aws tmux brew rails docker bundler vi-mode zsh-syntax-highlighting zaw)
+plugins=(git git-flow virtualenv gradle history mvn node sublime vagrant my-alias aws tmux brew rails docker bundler vi-mode zsh-syntax-highlighting zaw zsh-wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,9 +30,6 @@ setopt EXTENDED_HISTORY
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
 
 alias rake="noglob rake"
-
-#Docker
-`docker-machine env dev`
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
