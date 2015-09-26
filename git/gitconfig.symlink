@@ -1,6 +1,6 @@
 [user]
     name = Bruce Li
-    email = wbinglee@gmail.com
+    email = libruce@amazon.com
 [push]
     default = current
 [alias]
@@ -13,8 +13,15 @@
     pl = pull
     master = checkout master
     recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [core]
 	editor = vim
+	pager = less -FMRiX
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[color]
+	ui = auto
+[amazon]
+	append-cr-url = true
+	pull-request-by-default = true

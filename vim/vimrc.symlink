@@ -1,4 +1,42 @@
+" Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'yssl/QFEnter'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'matchit.zip'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tmhedberg/matchit'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'tpope/vim-commentary'
+Plugin 'xolox/vim-easytags'
+Plugin 'tpope/vim-endwise'
+Plugin 'notpratheek/vim-luna'
+Plugin 'xolox/vim-misc'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'airblade/vim-rooter'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-surround'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'wbinglee/bruce-colorscheme.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " My Settings"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,9 +77,9 @@ nmap <leader>w :w!<cr>
 "Enable YCM for all files
 let g:ycm_filetype_blacklist = {}
 
-" pathogen for plugin management
+" " pathogen for plugin management
 
-execute pathogen#infect()
+" execute pathogen#infect()
 
 
 
@@ -282,9 +320,10 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 " Linebreak on 500 characters
 set lbr
