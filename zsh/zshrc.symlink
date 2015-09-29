@@ -6,7 +6,7 @@ CASE_SENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git git-flow history node my-alias aws tmux brew rails docker bundler zsh-syntax-highlighting zaw zsh-wakatime)
+plugins=(git git-flow history node my-alias aws tmux brew rails docker bundler zsh-syntax-highlighting zsh-wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,9 +30,10 @@ setopt EXTENDED_HISTORY
 # Add ctrl-r for backward history search , pattern based
 # bindkey '^R' history-incremental-pattern-search-backward
 
-bindkey '^R' zaw-history
+# bindkey '^R' zaw-history
 
-alias rake="noglob rake"
+#New fuzzy file and history search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/apollo/env/SDETools/bin
