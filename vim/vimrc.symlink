@@ -15,7 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'yssl/QFEnter'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'matchit.zip'
+" Plugin 'matchit.zip'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/matchit'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -27,13 +27,21 @@ Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-endwise'
 Plugin 'notpratheek/vim-luna'
 Plugin 'xolox/vim-misc'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+" Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'airblade/vim-rooter'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'wbinglee/bruce-colorscheme.vim'
-
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
+Plugin 'milkypostman/vim-togglelist'
+Plugin 'DavidEGx/ctrlp-smarttabs'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'tpope/vim-repeat'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -74,12 +82,6 @@ nmap <leader>w :w!<cr>
 " Ctrl-Space for auto complete
 " inoremap <Nul> <C-n>
 
-"Enable YCM for all files
-let g:ycm_filetype_blacklist = {}
-
-" " pathogen for plugin management
-
-" execute pathogen#infect()
 
 
 
@@ -190,12 +192,16 @@ nnoremap <F2> :lnext<CR>
 nnoremap <S-F2> :lprevious<CR>
 
 " Airline
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
+" Togglelist
+let g:toggle_list_no_mappings = 1
+nmap <script> <silent> <leader>x :call ToggleQuickfixList()<CR>
 
 " vim-session
 let g:session_autosave = 'no'
@@ -447,7 +453,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cursor in the right position
-map <leader>g :Ack
+map <leader>g :Ack<space>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
@@ -469,6 +475,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
+autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell
+autocmd BufNewFile,BufRead *.{markdown,md,rst} setlocal spell
+autocmd BufNewFile,BufRead README setlocal spell
 
 " Shortcuts using <leader>
 "map <leader>sn ]s
@@ -545,6 +554,14 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+" Add a color column for lines over 120, only for lines over 120
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%121v', 100)
+
+" Easytags
+let g:easytags_on_cursorhold = 0
+let g:easytags_auto_update = 0
+let g:easytags_auto_highlight = 0
 
 "" returns true iff is NERDTree open/active
 "function! RC_isNTOpen()

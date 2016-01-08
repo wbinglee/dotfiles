@@ -7,7 +7,9 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     pd = pull --rebase
     s = status
+    f = fetch
     d = diff
+    c = commit
     ds = diff --staged
     ps = push
     pl = pull

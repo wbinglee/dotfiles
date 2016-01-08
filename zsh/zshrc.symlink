@@ -26,6 +26,10 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_SPACE
 setopt EXTENDED_HISTORY
 
+#Use vi mode for shell
+bindkey -v
+# Faster zsh vi mode deploy
+export KEYTIMEOUT=1
 
 # Add ctrl-r for backward history search , pattern based
 # bindkey '^R' history-incremental-pattern-search-backward
@@ -33,7 +37,16 @@ setopt EXTENDED_HISTORY
 # bindkey '^R' zaw-history
 
 #New fuzzy file and history search
+#
+# # Setting ag as the default source for fzf
+#
+# # Now fzf (w/o pipe) will use ag instead of find
+# fzf
+#
+# # To apply the command to CTRL-T as well
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/apollo/env/SDETools/bin
@@ -44,8 +57,6 @@ PATH=$PATH:/apollo/env/SDETools/bin
 ssh-add > /dev/null 2>&1
 ssh-add ~/.ssh/aws/* > /dev/null 2>&1
 
-# Faster zsh vi mode deploy
-# export KEYTIMEOUT=1
 
 # Personal data
 source ~/.secret
