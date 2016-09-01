@@ -21,7 +21,10 @@ alias bb='brazil-build'
 alias brc='brazil-recursive-cmd'
 
 alias pr='post-review -o'
+alias crs='post-review --target-groups=team-charlie-skykitchen -o'
 
 alias q='cd ~'
 
 alias crm='z RubyModels'
+
+alias odin-tunnel='ssh -L 2009:localhost:2009  libruce.aka.corp.amazon.com  -f -N'

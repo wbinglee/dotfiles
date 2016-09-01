@@ -3,7 +3,6 @@ bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # tmux display things in 256 colors
 set -g default-terminal "screen-256color"
-set -g status-utf8 on
 
 set -g history-limit 20000
 

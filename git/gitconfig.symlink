@@ -1,29 +1,31 @@
 [user]
-    name = Bruce Li
-    email = libruce@amazon.com
+  name = Bruce Li
+  email = libruce@amazon.com
 [push]
-    default = current
+  default = current
 [alias]
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    pd = pull --rebase
-    s = status
-    f = fetch
-    d = diff
-    c = commit
-    ds = diff --staged
-    ps = push
-    pl = pull
-    master = checkout master
-    recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
-	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  pd = pull --rebase
+  b = branch
+  s = status
+  f = fetch
+  d = diff
+  c = commit
+  ds = diff --staged
+  ps = push
+  pl = pull
+  co = checkout
+  master = checkout master
+  recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
+  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [core]
-	editor = vim
-	pager = less -FMRiX
+  editor = vim
+  pager = less -FMRiX
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 [color]
-	ui = auto
+  ui = auto
 [amazon]
-	append-cr-url = true
-	pull-request-by-default = true
+  append-cr-url = true
+  pull-request-by-default = true

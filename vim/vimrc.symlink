@@ -40,6 +40,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ervandew/supertab'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'DavidEGx/ctrlp-smarttabs'
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'tpope/vim-repeat'
 " All of your Plugins must be added before the following line
@@ -137,7 +138,7 @@ map <leader>t :CtrlPSmartTabs<cr>
 map <leader>o :CtrlPBufTag<cr>
 
 " Cmd search plugin for ctrl-p
-map <leader>p :CtrlPCmdPalette<cr>
+nmap <D-A> :CtrlPCmdPalette<cr>
 let g:ctrlp_cmdpalette_execute = 1
 
 " Trim white space when save
@@ -577,3 +578,6 @@ let g:easytags_auto_highlight = 0
 "endfunction
 "
 "autocmd BufEnter * call RC_syncTree()
+
+
+let g:ruby_indent_access_modifier_style="outdent"
