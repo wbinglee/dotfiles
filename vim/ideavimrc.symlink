@@ -1,0 +1,13 @@
+" Common
+:map \f :action ReformatCode<CR>
+:map \t :action Test<CR>
+
+" Navigation
+nmap gi :action GotoImplementation<CR>
+nmap gt :action GotoTest<CR>
+
+" Pane actions
+:map <C-W>m :action MoveEditorToOppositeTabGroup<CR>
+:map <C-W>u :action Unsplit<CR>
+
+
