@@ -6,7 +6,7 @@ CASE_SENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git git-flow history node my-alias aws tmux brew rails docker bundler zsh-syntax-highlighting zsh-wakatime knife)
+plugins=(git git-flow history node my-alias aws tmux brew rails docker bundler zsh-syntax-highlighting zsh-wakatime knife tmuxinator)
 
 #Let /usr/local/bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
@@ -61,6 +61,10 @@ ssh-add ~/.ssh/aws/* > /dev/null 2>&1
 
 # Personal data
 source ~/.secret
+
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 PATH="/Users/libruce/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/Users/libruce/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;

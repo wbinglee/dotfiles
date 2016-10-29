@@ -20,6 +20,10 @@ alias bb='brazil-build'
 
 alias brc='brazil-recursive-cmd'
 
+alias bcr='brazil-build clean && brazil-build release'
+
+alias ball='brazil-recursive-cmd "brazil-build clean && brazil-build release"'
+
 alias pr='post-review -o'
 alias crs='post-review --target-groups=team-charlie-skykitchen -o'
 
