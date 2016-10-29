@@ -32,3 +32,5 @@ alias q='cd ~'
 alias crm='z RubyModels'
 
 alias odin-tunnel='ssh -L 2009:localhost:2009  libruce.aka.corp.amazon.com  -f -N'
+
+alias mux="tmuxinator"
