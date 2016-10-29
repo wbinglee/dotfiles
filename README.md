@@ -1,28 +1,30 @@
 # Bruce Li Dot Files
 
-This is dotfiles which combines the ideas of both [holman/dotfiles](https://github.com/holman/dotfiles) and [ryanb/dotfiles](https://github.com/ryanb/dotfiles).
-
-
 ## Installation
 
-Run the following commands in your terminal. It will prompt you before it does anything destructive. Check out the [Rakefile](https://github.com/wbinglee/dotfiles/blob/master/Rakefile) to see exactly what it does.
+Clone onto your laptop:
 
 ```terminal
-git clone git@github.com:wbinglee/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-rake install
+git clone git://github.com/wbinglee/dotfiles.git ~/.dotfiles
 ```
 
-After installing, open a new terminal window to see the effects.
+Install [rcm](https://github.com/thoughtbot/rcm):
 
-Feel free to customize the .zshrc file to match your preference.
+    brew tap thoughtbot/formulae
+    brew install rcm
 
-## Uninstall
+Install the dotfiles:
 
-To remove the dotfile configs, run the following commands. Be certain to double check the contents of the files before removing so you don't lose custom settings.
+    env RCRC=$HOME/.dotfiles/rcrc rcup
 
-```
-rake uninstall
-```
+
+After the initial installation, you can run `rcup` without the one-time variable
+`RCRC` being set (`rcup` will symlink the repo's `rcrc` to `~/.rcrc` for future
+runs of `rcup`). [See
+example](https://github.com/thoughtbot/dotfiles/blob/master/rcrc).
+
+This command will create symlinks for config files in your home directory.
+Setting the `RCRC` environment variable tells `rcup` to use standard
+configuration options:
 
 Then open a new terminal window to see the effects.
