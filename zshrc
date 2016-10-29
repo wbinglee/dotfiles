@@ -66,6 +66,9 @@ source ~/.secret
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# rcm
+RCRC=$HOME/.dotfiles/rcrc
+
 PATH="/Users/libruce/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/Users/libruce/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/libruce/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
