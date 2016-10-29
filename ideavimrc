@@ -1,6 +1,7 @@
 " Common
 :map \f :action ReformatCode<CR>
 :map \t :action Test<CR>
+:map \r :action RenameElement<CR>
 
 " Navigation
 nmap gi :action GotoImplementation<CR>
