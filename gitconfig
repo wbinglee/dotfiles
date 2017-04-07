@@ -18,6 +18,7 @@
   master = checkout master
   recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
   dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+	lastcr = !git log --grep \"^cr \" -1 --oneline | cut -f 1 -d\" \"
 [core]
   editor = vim
   pager = less -FMRiX
@@ -29,3 +30,4 @@
 [amazon]
   append-cr-url = true
   pull-request-by-default = true
+	suggest-gitfarm-client = shown

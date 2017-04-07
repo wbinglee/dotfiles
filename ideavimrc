@@ -6,6 +6,9 @@
 " Navigation
 nmap gi :action GotoImplementation<CR>
 nmap gt :action GotoTest<CR>
+nmap gu :action FindUsages<CR>
+nmap ga :action Annotate<CR>
+
 
 " Pane actions
 :map <C-W>m :action MoveEditorToOppositeTabGroup<CR>

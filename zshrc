@@ -1,12 +1,12 @@
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="bruce"
+ZSH_THEME="pure"
 
 CASE_SENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git git-flow history node my-alias aws tmux brew rails docker bundler zsh-syntax-highlighting zsh-wakatime knife tmuxinator)
+plugins=(git git-flow history node my-alias aws tmux brew docker bundler zsh-syntax-highlighting zsh-wakatime knife tmuxinator nvm)
 
 #Let /usr/local/bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
@@ -74,3 +74,6 @@ PERL5LIB="/Users/libruce/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5L
 PERL_LOCAL_LIB_ROOT="/Users/libruce/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/libruce/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/libruce/perl5"; export PERL_MM_OPT;
+
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
