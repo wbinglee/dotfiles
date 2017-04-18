@@ -1,3 +1,7 @@
+" Basic
+set visualbell
+set noerrorbells
+
 " Common
 :map \f :action ReformatCode<CR>
 :map \t :action Test<CR>
