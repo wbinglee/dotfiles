@@ -6,7 +6,8 @@ CASE_SENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git git-flow history node my-alias aws tmux brew docker bundler zsh-syntax-highlighting zsh-wakatime knife tmuxinator nvm)
+# Make sure zsh-syntax-highlighting is the last one
+plugins=(git git-flow history node my-alias aws tmux brew docker bundler zsh-wakatime knife tmuxinator nvm zsh-syntax-highlighting)
 
 #Let /usr/local/bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
