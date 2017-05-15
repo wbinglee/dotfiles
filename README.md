@@ -5,7 +5,7 @@
 Clone onto your laptop:
 
 ```terminal
-git clone git://github.com/wbinglee/dotfiles.git ~/.dotfiles
+git clone git@github.com:wbinglee/dotfiles.git ~/.dotfiles
 ```
 
 Install [rcm](https://github.com/thoughtbot/rcm):
