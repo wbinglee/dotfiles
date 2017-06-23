@@ -56,6 +56,7 @@ PATH=$PATH:/apollo/env/SDETools/bin
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Load private keys
+eval `ssh-agent -s` > /dev/null
 ssh-add > /dev/null 2>&1
 ssh-add ~/.ssh/aws/* > /dev/null 2>&1
 
@@ -78,3 +79,4 @@ PERL_MM_OPT="INSTALL_BASE=/Users/libruce/perl5"; export PERL_MM_OPT;
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
+export PATH=$BRAZIL_CLI_BIN:$PATH

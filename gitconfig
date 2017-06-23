@@ -31,3 +31,5 @@
   append-cr-url = true
   pull-request-by-default = true
 	suggest-gitfarm-client = shown
+[pull]
+	rebase = true
