@@ -17,6 +17,7 @@ alias dm='docker-machine'
 alias b='brazil'
 
 alias bb='brazil-build'
+alias br='brazil-build release'
 
 alias brc='brazil-recursive-cmd'
 
