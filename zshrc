@@ -80,3 +80,14 @@ PERL_MM_OPT="INSTALL_BASE=/Users/libruce/perl5"; export PERL_MM_OPT;
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 export PATH=$BRAZIL_CLI_BIN:$PATH
+
+# Load Amazon ZSH function
+# Make sure run `git clone ssh://git.amazon.com/pkg/AmazonZshFunctions ~/.amazon_zsh_functions`
+fpath=($HOME/.amazon_zsh_functions/zsh/functions/4.2.5 $fpath)
+autoload -U compinit && compinit
+
+# Amazon Builder Toolbox
+export PATH=$HOME/.toolbox/bin:$PATH
+
+# Node for CharlieSky
+export NODE_BINARY_PATH=$(nvm which sky)

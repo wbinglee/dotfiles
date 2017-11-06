@@ -18,7 +18,10 @@
   master = checkout master
   recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'
   dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
-	lastcr = !git log --grep \"^cr \" -1 --oneline | cut -f 1 -d\" \"
+  pipe = !open "https://pipelines.amazon.com/changes/PKG/$(basename $(git rev-parse --show-toplevel))/$(git symbolic-ref --short HEAD)/GitFarm:$(git rev-parse @{u})"
+  code = !open "https://code.amazon.com/packages/$(basename $(git rev-parse --show-toplevel))"
+  lastcr = !git log --grep \"^cr \" -1 --oneline | cut -f 1 -d\" \"
+  cr = !open `git log --grep \"^cr \" -1   --format=%B | grep \"cr https://\" | cut -d' ' -f 2`
 [core]
   editor = vim
   pager = less -FMRiX
