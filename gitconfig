@@ -9,9 +9,9 @@
   b = branch
   s = status
   f = fetch
-  d = diff
+  d = diff --ws-error-highlight=all
   c = commit
-  ds = diff --staged
+  ds = diff --staged --ws-error-highlight=all
   ps = push
   pl = pull
   co = checkout
@@ -25,6 +25,7 @@
 [core]
   editor = vim
   pager = less -FMRiX
+	excludesfile = /Users/libruce/.gitignore
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f

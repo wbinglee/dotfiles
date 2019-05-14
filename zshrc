@@ -7,7 +7,7 @@ CASE_SENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Make sure zsh-syntax-highlighting is the last one
-plugins=(git git-flow history node my-alias aws tmux brew docker bundler zsh-wakatime knife tmuxinator nvm zsh-syntax-highlighting)
+plugins=(git git-flow history node aws tmux brew docker bundler zsh-wakatime knife tmuxinator  gradle zsh-syntax-highlighting)
 
 #Let /usr/local/bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
@@ -77,8 +77,8 @@ PERL_LOCAL_LIB_ROOT="/Users/libruce/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LI
 PERL_MB_OPT="--install_base \"/Users/libruce/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/libruce/perl5"; export PERL_MM_OPT;
 
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+  # . "/usr/local/opt/nvm/nvm.sh"
 export PATH=$BRAZIL_CLI_BIN:$PATH
 
 # Load Amazon ZSH function
@@ -90,4 +90,33 @@ autoload -U compinit && compinit
 export PATH=$HOME/.toolbox/bin:$PATH
 
 # Node for CharlieSky
-export NODE_BINARY_PATH=$(nvm which sky)
+# export NODE_BINARY_PATH=$(nvm which sky)
+
+# Puppet client tool
+export PATH=/opt/puppetlabs/bin:$PATH
+
+export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+source aws_zsh_completer.sh
+
+# Disable Python warning for ssl verify disable
+export PYTHONWARNINGS="ignore:Unverified HTTPS request"
+
+# Check midway
+SSH_CERT=~/.ssh/id_rsa-cert.pub
+if (! test -f "$SSH_CERT") || (test "`find ~/.ssh/id_rsa-cert.pub -mmin +1200`"); then
+  echo "Midway expired"
+  if mwinit; then
+    ssh-add -D ~/.ssh/*_rsa
+    ssh-add ~/.ssh/*_rsa
+  else
+    echo "Failed to authenticate."
+    exit 1
+  fi
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/libruce/.sdkman"
+[[ -s "/Users/libruce/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/libruce/.sdkman/bin/sdkman-init.sh"
+
+export PATH=$PATH:/users/libruce/repos/my_amazon_tools/bin
+

@@ -2,3 +2,9 @@
 .svn
 *~
 .*.swp
+*.iml
+
+/build
+dev-libruce-2c-d2e0690a.us-west-2.amazon.com.cfg
+
+configuration/rip-private/

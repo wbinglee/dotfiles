@@ -17,6 +17,7 @@ alias dm='docker-machine'
 alias b='brazil'
 
 alias bb='brazil-build'
+alias bbr='brazil-build-rainbow'
 alias br='brazil-build release'
 
 alias brc='brazil-recursive-cmd'
@@ -24,6 +25,7 @@ alias brc='brazil-recursive-cmd'
 alias bcr='brazil-build clean && brazil-build release'
 
 alias btorch='brazil-recursive-cmd "brazil-build clean && brazil-build release"'
+alias ball='brazil-recursive-cmd "brazil-build clean && brazil-build release"'
 
 alias pr='post-review -o'
 alias crs='cr --reviewers team:"Team Charlie SkyKitchen"'
@@ -35,3 +37,6 @@ alias crm='z RubyModels'
 alias odin-tunnel='ssh -L 2009:localhost:2009  libruce.aka.corp.amazon.com  -f -N'
 
 alias mux="tmuxinator"
+
+# Paste to current to paste.amazon.com
+alias p2a="pbpaste | amazon_paste"
