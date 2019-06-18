@@ -1,18 +1,20 @@
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="pure"
+ZSH_THEME=""
 
 CASE_SENSITIVE="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
 # Make sure zsh-syntax-highlighting is the last one
-plugins=(git git-flow history node aws tmux brew docker bundler zsh-wakatime knife tmuxinator  gradle zsh-syntax-highlighting)
+plugins=(git gitfast history node aws tmux brew docker bundler zsh-wakatime knife tmuxinator  gradle kubectl zsh-syntax-highlighting)
 
 #Let /usr/local/bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
+autoload -U promptinit; promptinit
+prompt pure
 
 
 #rbenv config

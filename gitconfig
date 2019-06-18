@@ -1,6 +1,8 @@
 [user]
   name = Wenbing Li
   email = libruce@amazon.com
+[pull]
+  rebase = true
 [push]
   default = current
 [alias]
@@ -24,13 +26,25 @@
   cr = !open `git log --grep \"^cr \" -1   --format=%B | grep \"cr https://\" | cut -d' ' -f 2`
 [core]
   editor = vim
-  pager = less -FMRiX
+  pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = /Users/libruce/.gitignore
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [color]
-  ui = auto
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 [amazon]
   append-cr-url = true
   pull-request-by-default = true
