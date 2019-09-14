@@ -97,8 +97,8 @@ export PATH=$HOME/.toolbox/bin:$PATH
 # Puppet client tool
 export PATH=/opt/puppetlabs/bin:$PATH
 
-export PATH="$HOME/Library/Python/3.6/bin:$PATH"
-source aws_zsh_completer.sh
+# export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+# source aws_zsh_completer.sh
 
 # Disable Python warning for ssl verify disable
 export PYTHONWARNINGS="ignore:Unverified HTTPS request"
@@ -110,6 +110,7 @@ if (! test -f "$SSH_CERT") || (test "`find ~/.ssh/id_rsa-cert.pub -mmin +1200`")
   if mwinit; then
     ssh-add -D ~/.ssh/*_rsa
     ssh-add ~/.ssh/*_rsa
+    ssh-add
   else
     echo "Failed to authenticate."
     exit 1
@@ -122,3 +123,8 @@ export SDKMAN_DIR="/Users/libruce/.sdkman"
 
 export PATH=$PATH:/users/libruce/repos/my_amazon_tools/bin
 
+export CDK_DEFAULT_ACCOUNT=576483741303
+export CDK_DEFAULT_REGION=us-east-1
+
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"

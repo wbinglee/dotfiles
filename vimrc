@@ -173,7 +173,7 @@ highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
 
-au FileType javascript call JavaScriptFold()
+" au FileType javascript call JavaScriptFold()
 
 " Disalbe arrow key, YES, man
 nnoremap <up> <nop>
