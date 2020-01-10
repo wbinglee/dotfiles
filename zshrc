@@ -128,3 +128,5 @@ export CDK_DEFAULT_REGION=us-east-1
 
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+source /Users/libruce/Library/Caches/BenderLibIsengard/isengard_zsh_completion.sh

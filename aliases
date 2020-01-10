@@ -40,3 +40,5 @@ alias mux="tmuxinator"
 
 # Paste to current to paste.amazon.com
 alias p2a="pbpaste | amazon_paste"
+
+alias pip="pip3"
